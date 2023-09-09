@@ -7,7 +7,7 @@ const Login = (props) => {
   const [name, setName] = useLocalStorage("name", "");
   return (
     <React.Fragment>
-      <div className="mb-4">
+      <div className="w-1/2 mb-4">
         <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
           Name
         </label>
