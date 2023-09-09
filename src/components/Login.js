@@ -1,10 +1,10 @@
 import React from "react";
 import Icon from "@mdi/react";
 import { useLocalStorage } from "@uidotdev/usehooks";
-import { mdiArrowRightThick } from "@mdi/js";
+import { mdiPlay } from "@mdi/js";
 
 const Login = (props) => {
-  const [name, setName] = useLocalStorage("name", "");
+  const [setName] = useLocalStorage("name", "");
   return (
     <React.Fragment>
       <div className="w-1/2 mb-4">
@@ -15,8 +15,6 @@ const Login = (props) => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="name"
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
           placeholder="Enter your name to start playing"
         />
       </div>
@@ -25,11 +23,13 @@ const Login = (props) => {
           className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex"
           type="button"
           onClick={(e) => {
-            if (name !== "") {
+            let nameInput = document.getElementById("name").value;
+            if (nameInput !== "") {
+              setName(nameInput);
               props.chageStep(2);
             }
           }}>
-          Next <Icon path={mdiArrowRightThick} size={1} color="white" className="ms-2" />
+          Start <Icon path={mdiPlay} size={1} color="white" className="ms-2" />
         </button>
       </div>
     </React.Fragment>
