@@ -35,7 +35,6 @@
     </li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -100,12 +99,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Juan Flores - [LinkedIn](https://www.linkedin.com/in/jfloresvid) - j.floresvid@gmail.com
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-- [GitHub Pages](https://pages.github.com)
-- [Font Awesome](https://fontawesome.com)
 
 [product-screenshot]: src/images/screenshot-memory.png
