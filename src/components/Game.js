@@ -38,9 +38,9 @@ const Game = ({ changeStep }) => {
           return (
             <Card
               key={"card" + (index + 1)}
-              uuid={images.uuid}
+              uuid={images.fields.image.uuid}
               urlImageBackCard={imagenQuestion}
-              urlImageFrontcard={images.url}
+              urlImageFrontcard={images.fields.image.url}
               uuidCard1Pressed={uuidCard1Pressed}
               setUuidCard1Pressed={setUuidCard1Pressed}
               uuidCard2Pressed={uuidCard2Pressed}

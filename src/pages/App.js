@@ -8,12 +8,16 @@ import CompleteMessage from "../components/CompleteMessage";
 function App() {
   const [step, setStep] = useState(1);
   const [name] = useLocalStorage("name", "");
+  const [totalSuccesses, setTotalSuccesses] = useLocalStorage("totalSuccesses", 0);
+  const [totalErrors, setTotalErrors] = useLocalStorage("totalErrors", 0);
 
   useEffect(() => {
     if (name !== "") {
+      setTotalSuccesses(0);
+      setTotalErrors(0);
       setStep(2);
     }
-  }, [name]);
+  }, []);
 
   return (
     <div className="container px-4 pb-4 mx-auto h-full md:h-screen">

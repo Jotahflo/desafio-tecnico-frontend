@@ -14,14 +14,8 @@ const getDataImagesCards = async () => {
   }
 
   if (result !== null) {
-    let onlyImages = [];
-    let only12Images = [];
-    let randomImagesRepeat = [];
-    result.entries.forEach((images) => {
-      onlyImages.push({ uuid: images.fields.image.uuid, active: false, url: images.fields.image.url });
-    });
-    only12Images = onlyImages.sort(() => Math.random() - 0.5).slice(0, 12);
-    randomImagesRepeat = [...only12Images, ...only12Images].sort(() => Math.random() - 0.5);
+    let only12Images = result.entries.sort(() => Math.random() - 0.5).slice(0, 12);
+    let randomImagesRepeat = [...only12Images, ...only12Images].sort(() => Math.random() - 0.5);
     result = randomImagesRepeat;
   }
 

@@ -14,6 +14,7 @@ const Card = ({
   setTotalErrors,
 }) => {
   const [isActive, setIsActive] = useState(false);
+  const [isPressedAnyCard, setIsPressedAnyCard] = useState(false);
 
   useEffect(() => {
     if (
@@ -27,7 +28,7 @@ const Card = ({
         setUuidCard2Pressed("");
         setTotalErrors(totalErrors + 1);
         setIsActive(false);
-      }, 1000);
+      }, 800);
     } else if (
       uuidCard1Pressed !== "" &&
       uuidCard2Pressed !== "" &&
@@ -42,8 +43,9 @@ const Card = ({
 
   return (
     <div
-      className="w-full h-full cursor-pointer border-2 border-red-500 rounded-xl drop-shadow-md animate-bounce"
+      className={"w-full h-full cursor-pointer  animate__animated animate__bounceIn"}
       onClick={(e) => {
+        setIsPressedAnyCard(true);
         if (uuidCard1Pressed === "") {
           setUuidCard1Pressed(uuid);
           setIsActive(true);
@@ -53,9 +55,19 @@ const Card = ({
         }
       }}>
       {isActive ? (
-        <img src={urlImageFrontcard} className="object-cover w-full h-full rounded-xl" alt="logo" />
+        <img
+          src={urlImageFrontcard}
+          className="object-cover w-full h-full animate__animated animate__flip animate__faster border-2 border-red-500 rounded-xl drop-shadow-md"
+          alt="imageFrontcard"
+        />
+      ) : isPressedAnyCard ? (
+        <img
+          src={urlImageBackCard}
+          className="object-cover w-full h-full animate__animated animate__flipInY border-2 border-red-500 rounded-xl drop-shadow-md"
+          alt="imagenBackCard"
+        />
       ) : (
-        <img src={urlImageBackCard} className="object-cover w-full h-full rounded-xl" alt="logo" />
+        <img src={urlImageBackCard} className="object-cover w-full h-full border-2 border-red-500 rounded-xl drop-shadow-md" alt="imagenBackCard" />
       )}
     </div>
   );
