@@ -3,6 +3,7 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import Header from "../components/Header";
 import Login from "../components/Login";
 import Game from "../components/Game";
+import CompleteMessage from "../components/CompleteMessage";
 
 function App() {
   const [step, setStep] = useState(1);
@@ -17,8 +18,9 @@ function App() {
   return (
     <div className="container px-4 pb-4 mx-auto h-full md:h-screen">
       <Header />
+      {step === 2 && <p className="font-bold text-center">Find the cards that are equal</p>}
       <div className="flex flex-col items-center justify-center h-full md:h-3/4 p-4 bg-slate-500 border-2 rounded-lg">
-        {step === 1 ? <Login chageStep={setStep} /> : step === 2 ? <Game chageStep={setStep} /> : <Login chageStep={setStep} />}
+        {step === 1 ? <Login changeStep={setStep} /> : step === 2 ? <Game changeStep={setStep} /> : <CompleteMessage changeStep={setStep} />}
       </div>
     </div>
   );

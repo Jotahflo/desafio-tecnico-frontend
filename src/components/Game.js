@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import getDataImagesCards from "../data/dataImagesCards";
 import imagenQuestion from "../images/question-card.jpg";
 
-const Game = (props) => {
+const Game = ({ changeStep }) => {
   const [imagesCards, setImagesCards] = useState([]);
   const [totalSuccesses, setTotalSuccesses] = useLocalStorage("totalSuccesses", 0);
   const [totalErrors, setTotalErrors] = useLocalStorage("totalErrors", 0);
@@ -25,9 +25,15 @@ const Game = (props) => {
     setUuidCard2Pressed("");
   }, []);
 
+  useEffect(() => {
+    if (totalSuccesses === 12) {
+      changeStep(3);
+    }
+  }, [totalSuccesses]);
+
   if (imagesCards.length > 0) {
     return (
-      <div className="w-full h-full grid grid-cols-2 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-9 grid-rows-12 md:grid-rows-4 lg:grid-rows-3 gap-4">
+      <div className="w-full h-full grid grid-cols-2 md:grid-cols-6 lg:grid-cols-8 grid-rows-12 md:grid-rows-4 lg:grid-rows-3 gap-4">
         {imagesCards.map((images, index) => {
           return (
             <Card
@@ -35,7 +41,6 @@ const Game = (props) => {
               uuid={images.uuid}
               urlImageBackCard={imagenQuestion}
               urlImageFrontcard={images.url}
-              isActive={images.active}
               uuidCard1Pressed={uuidCard1Pressed}
               setUuidCard1Pressed={setUuidCard1Pressed}
               uuidCard2Pressed={uuidCard2Pressed}

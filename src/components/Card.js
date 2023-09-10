@@ -1,49 +1,61 @@
 import React, { useState, useEffect } from "react";
 
-const Card = (props) => {
+const Card = ({
+  uuid,
+  urlImageBackCard,
+  urlImageFrontcard,
+  uuidCard1Pressed,
+  uuidCard2Pressed,
+  setUuidCard1Pressed,
+  setUuidCard2Pressed,
+  totalSuccesses,
+  setTotalSuccesses,
+  totalErrors,
+  setTotalErrors,
+}) => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     if (
-      props.uuidCard1Pressed !== "" &&
-      props.uuidCard2Pressed !== "" &&
-      props.uuidCard1Pressed !== props.uuidCard2Pressed &&
-      (props.uuid === props.uuidCard1Pressed || props.uuid === props.uuidCard2Pressed)
+      uuidCard1Pressed !== "" &&
+      uuidCard2Pressed !== "" &&
+      uuidCard1Pressed !== uuidCard2Pressed &&
+      (uuid === uuidCard1Pressed || uuid === uuidCard2Pressed)
     ) {
       setTimeout(() => {
-        props.setUuidCard1Pressed("");
-        props.setUuidCard2Pressed("");
-        props.setTotalErrors(props.totalErrors + 1);
+        setUuidCard1Pressed("");
+        setUuidCard2Pressed("");
+        setTotalErrors(totalErrors + 1);
         setIsActive(false);
       }, 1000);
     } else if (
-      props.uuidCard1Pressed !== "" &&
-      props.uuidCard2Pressed !== "" &&
-      props.uuidCard1Pressed === props.uuidCard2Pressed &&
-      (props.uuid === props.uuidCard1Pressed || props.uuid === props.uuidCard2Pressed)
+      uuidCard1Pressed !== "" &&
+      uuidCard2Pressed !== "" &&
+      uuidCard1Pressed === uuidCard2Pressed &&
+      (uuid === uuidCard1Pressed || uuid === uuidCard2Pressed)
     ) {
-      props.setUuidCard1Pressed("");
-      props.setUuidCard2Pressed("");
-      props.setTotalSuccesses(props.totalSuccesses + 1);
+      setUuidCard1Pressed("");
+      setUuidCard2Pressed("");
+      setTotalSuccesses(totalSuccesses + 1);
     }
-  }, [props.uuidCard1Pressed, props.uuidCard2Pressed]);
+  }, [uuidCard1Pressed, uuidCard2Pressed]);
 
   return (
     <div
-      className="w-full h-full cursor-pointer border-2 border-red-500 rounded-xl drop-shadow-md"
+      className="w-full h-full cursor-pointer border-2 border-red-500 rounded-xl drop-shadow-md animate-bounce"
       onClick={(e) => {
-        if (props.uuidCard1Pressed === "") {
-          props.setUuidCard1Pressed(props.uuid);
+        if (uuidCard1Pressed === "") {
+          setUuidCard1Pressed(uuid);
           setIsActive(true);
-        } else if (props.uuidCard1Pressed !== "" && props.uuidCard2Pressed === "") {
-          props.setUuidCard2Pressed(props.uuid);
+        } else if (uuidCard1Pressed !== "" && uuidCard2Pressed === "") {
+          setUuidCard2Pressed(uuid);
           setIsActive(true);
         }
       }}>
       {isActive ? (
-        <img src={props.urlImageFrontcard} className="object-cover w-full h-full rounded-xl" alt="logo" />
+        <img src={urlImageFrontcard} className="object-cover w-full h-full rounded-xl" alt="logo" />
       ) : (
-        <img src={props.urlImageBackCard} className="object-cover w-full h-full rounded-xl" alt="logo" />
+        <img src={urlImageBackCard} className="object-cover w-full h-full rounded-xl" alt="logo" />
       )}
     </div>
   );
