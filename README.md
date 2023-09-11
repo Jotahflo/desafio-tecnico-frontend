@@ -76,7 +76,7 @@ This is an list things you need to running the project and how to install them.
    ```sh
    git clone https://github.com/Jotahflo/desafio-tecnico-frontend.git
    ```
-2. Install NPM packages and libraries (Important: Execute command on the project route)
+2. Install NPM packages and libraries **(Important: Execute command on the project route)**
 
    ```sh
    npm install
