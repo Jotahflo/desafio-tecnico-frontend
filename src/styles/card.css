@@ -1,0 +1,6 @@
+.card {
+  @apply w-full h-full cursor-pointer;
+}
+.card__image {
+  @apply object-cover w-full h-full border-2 border-red-500 rounded-xl drop-shadow-md;
+}

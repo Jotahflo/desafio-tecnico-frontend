@@ -1,0 +1,15 @@
+.complete-message {
+  @apply flex flex-col items-center;
+}
+.complete-message__text {
+  @apply text-2xl text-white;
+}
+.complete-message__button {
+  @apply flex text-white font-bold py-2 px-4  mt-3 rounded;
+}
+.complete-message__button--primary {
+  background-color: #003d80 !important;
+}
+.complete-message__button--primary:hover {
+  background-color: #1e40af !important;
+}

@@ -1,0 +1,12 @@
+.grid-cards {
+  @apply w-full h-full grid grid-cols-2 md:grid-cols-6 lg:grid-cols-8 grid-rows-12 md:grid-rows-4 lg:grid-rows-3 gap-4;
+}
+.loader {
+  @apply flex items-center;
+}
+.loader__svg {
+  @apply animate-spin ml-1 mr-3 h-8 w-8 text-white;
+}
+.loader__text {
+  @apply text-white text-xl;
+}

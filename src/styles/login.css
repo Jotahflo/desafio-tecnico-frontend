@@ -1,0 +1,30 @@
+.form-username {
+  @apply w-full md:w-1/2 mb-4;
+}
+.form-username__label {
+  @apply block text-white text-sm font-bold mb-2;
+}
+.form-username__input {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+}
+.form-username__span {
+  @apply flex font-medium mt-2;
+}
+.form-username__span--error {
+  @apply text-red-800;
+}
+.form-button {
+  @apply flex items-center justify-center;
+}
+.form-button__button {
+  @apply flex text-white font-bold py-2 px-4 rounded;
+}
+.form-button__icon {
+  @apply ms-2;
+}
+.form-button__button--primary {
+  background-color: #003d80 !important;
+}
+.form-button__button--primary:hover {
+  background-color: #1e40af !important;
+}

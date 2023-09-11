@@ -1,0 +1,36 @@
+.header {
+  @apply flex flex-col md:flex-row items-center px-2 mb-3;
+}
+.header--justify-between {
+  @apply justify-between;
+}
+.header--justify-center {
+  @apply justify-center;
+}
+.header__title-user {
+  @apply order-2 md:order-1;
+}
+.header__title-user--order {
+  @apply order-2 md:order-1;
+}
+.header__text-user {
+  @apply me-2 font-bold;
+}
+.logo {
+  @apply flex items-center justify-center;
+}
+.logo--order {
+  @apply order-1 md:order-2;
+}
+.logo__text {
+  @apply text-2xl font-bold;
+}
+.header__statistics-user--order {
+  @apply order-3;
+}
+.table-statistics {
+  @apply table-fixed;
+}
+.table-statistics__cell-title {
+  @apply pe-2 font-bold text-end;
+}

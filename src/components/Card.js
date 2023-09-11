@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../styles/card.css";
 
 const Card = ({
   uuid,
@@ -43,7 +44,7 @@ const Card = ({
 
   return (
     <div
-      className={"w-full h-full cursor-pointer  animate__animated animate__bounceIn"}
+      className="card animate__animated animate__bounceIn"
       onClick={(e) => {
         setIsPressedAnyCard(true);
         if (uuidCard1Pressed === "") {
@@ -55,19 +56,11 @@ const Card = ({
         }
       }}>
       {isActive ? (
-        <img
-          src={urlImageFrontcard}
-          className="object-cover w-full h-full animate__animated animate__flip animate__faster border-2 border-red-500 rounded-xl drop-shadow-md"
-          alt="imageFrontcard"
-        />
+        <img src={urlImageFrontcard} className="card__image animate__animated animate__flip animate__faster" alt="imageFrontcard" />
       ) : isPressedAnyCard ? (
-        <img
-          src={urlImageBackCard}
-          className="object-cover w-full h-full animate__animated animate__flipInY border-2 border-red-500 rounded-xl drop-shadow-md"
-          alt="imagenBackCard"
-        />
+        <img src={urlImageBackCard} className="card__image animate__animated animate__flipInY" alt="imagenBackCard" />
       ) : (
-        <img src={urlImageBackCard} className="object-cover w-full h-full border-2 border-red-500 rounded-xl drop-shadow-md" alt="imagenBackCard" />
+        <img src={urlImageBackCard} className="card__image" alt="imagenBackCard" />
       )}
     </div>
   );

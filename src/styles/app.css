@@ -1,0 +1,9 @@
+.container-app {
+  @apply container px-4 pb-4 mx-auto h-full md:h-screen;
+}
+.container-app__label {
+  @apply font-bold text-center;
+}
+.container-app__body {
+  @apply flex flex-col items-center justify-center h-full md:h-3/4 p-4 bg-slate-500 border-2 rounded-lg;
+}

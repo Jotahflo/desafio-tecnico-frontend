@@ -2,15 +2,16 @@ import React from "react";
 import Icon from "@mdi/react";
 import { mdiRepeat } from "@mdi/js";
 import { useLocalStorage } from "@uidotdev/usehooks";
+import "../styles/completeMessage.css";
 
 const CompleteMessage = ({ changeStep }) => {
   const [totalSuccesses, setTotalSuccesses] = useLocalStorage("totalSuccesses", 0);
   const [totalErrors, setTotalErrors] = useLocalStorage("totalErrors", 0);
   return (
-    <div className="flex flex-col items-center animate__animated animate__zoomIn">
-      <span className="text-2xl text-white">Congratulations you have finished the game!</span>
+    <div className="complete-message animate__animated animate__zoomIn">
+      <span className="complete-message__text">Congratulations you have finished the game!</span>
       <button
-        className="bg-card hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex mt-3"
+        className="complete-message__button complete-message__button--primary"
         type="button"
         onClick={(e) => {
           setTotalSuccesses(0);
