@@ -98,6 +98,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Juan Flores - [LinkedIn](https://www.linkedin.com/in/jfloresvid) - j.floresvid@gmail.com
+Juan Flores Videla - [LinkedIn](https://www.linkedin.com/in/jfloresvid) - j.floresvid@gmail.com
 
 [product-screenshot]: src/images/screenshot-memory.png
